@@ -1,5 +1,6 @@
 import React from "react"
 import Todo from "../models/todo"
+import SingleTodo from "./SingleTodo"
 
 type Props = {items: Todo[]}
 
@@ -7,7 +8,7 @@ const TodoList = (props: Props) => {
   return (
     <ul>
         {props.items.map((item: Todo) => {
-            return <li key={item.id}>{item.text}</li>
+            return <SingleTodo key={item.id} todo={item.text} />
         })}
     </ul>
   )
