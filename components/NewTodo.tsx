@@ -1,11 +1,12 @@
-import { FormEvent, useRef } from "react"
+import { FormEvent, useContext, useRef } from "react"
+import { TodosContext } from "../store/todos-context"
 import classes from "./NewTodo.module.css"
 
-type Props = {
-    onAddTodo: (text: string) => void
-}
+type Props = {}
 
 const NewTodo = (props: Props) => {
+    const todosCtx = useContext(TodosContext)
+
     const inputText = useRef<HTMLInputElement>(null)
 
     const submitHandler = (e: FormEvent) => {
@@ -17,7 +18,7 @@ const NewTodo = (props: Props) => {
             return
         }
 
-        props.onAddTodo(enteredText)
+        todosCtx.addTodo(enteredText)
     }
 
     return <form onSubmit={submitHandler} className={classes.form}>
