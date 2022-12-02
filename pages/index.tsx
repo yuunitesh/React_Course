@@ -10,7 +10,7 @@ export default function Home() {
     const addTodoHandler = (todoText: string) : void => {
         const newTodo = new Todo(todoText);
 
-        setTodos((prevState) => prevState.concat(newTodo))
+        setTodos((prevState) => [...prevState, newTodo])
     }
 
 return (
