@@ -13,10 +13,17 @@ export default function Home() {
         setTodos((prevState) => [...prevState, newTodo])
     }
 
+    const todoRemoveHandler = (todoId: string) => {
+        setTodos((prevState) => {
+            return prevState.filter(todo => todo.id !== todoId)
+        })
+
+    }
+
 return (
 <div>
     <NewTodo onAddTodo={addTodoHandler}/>
-    <TodoList items={todos}
+    <TodoList items={todos} onRemove={todoRemoveHandler}
 /></div>
 )
 }
