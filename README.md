@@ -1,4 +1,6 @@
 # Getting Started with Create React App
+---
+Just a repo for learning react
 
 # HOOKS, PROPS, FRAGMENT, PORTALS
 
